@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Добавление доходов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4">На главную</span>
+    </a>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="expense/information">Узнать расходы</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="income/information">Узнать доходы</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="expense/add">Добавить расходы</a>
+        <a class="py-2 text-dark text-decoration-none" href="income/add">Добавить доходы</a>
+    </nav>
+</div>
+
+<div class="container" mt-5>
+   <h1> Данные о ваших доходах</h1>
+    <div th:each="el: ${list}">
+        <h3 th:text="${#dates.format(el.date, 'dd-MMM-yyyy')}"/>
+        <p th:text="${el.money}"/>
+        <p th:text="${el.reason}"/>
+
+    </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
